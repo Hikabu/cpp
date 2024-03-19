@@ -5,14 +5,18 @@ int main(int ac, char **av)
 {
 	if (ac < 2)
 	{
-		std::cout << "Error" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (1);
 	}
-	for (int i = 1; i < ac; i++)
+	else
 	{
-		std::string s(av[i]);
-		std::cout << av[i];
+		for (int i = 1; i < ac; i++)
+		{
+			std::string str = av[i];
+			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+			std::cout << str;
+		}
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
-	return (0);
+		return (0);
 }

@@ -6,7 +6,7 @@
 #    By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 17:53:31 by vfedorov          #+#    #+#              #
-#    Updated: 2024/03/19 12:14:51 by vfedorov         ###   ########.fr        #
+#    Updated: 2024/03/19 16:44:51 by vfedorov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJ)
 	$(CPP) $(FLAGS) -o $(NAME) $(OBJ)
 
 clean:
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(OBJ)
 	
 fclean: clean
 	@rm -rf $(NAME)
