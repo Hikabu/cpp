@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valeriafedorova <valeriafedorova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 15:45:39 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/04/23 15:45:41 by valeriafedo      ###   ########.fr       */
+/*   Created: 2024/04/23 15:45:31 by valeriafedo       #+#    #+#             */
+/*   Updated: 2024/04/24 14:00:02 by valeriafedo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-int main(int ac, char **av)
+# include <iostream>
+# include "Contact.hpp"
+# include <string>
+
+class PhoneBook
 {
-	if (ac < 2)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (1);
-	}
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			std::string str = av[i];
-			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-			std::cout << str;
-		}
-		std::cout << std::endl;
-	}
-		return (0);
-}
+    private:
+		Contact _contacts[8];
+		int _nextIndex;
+		std::string getInput(std::string message);
+	
+    public:
+        PhoneBook() {};
+        ~PhoneBook() {};
+		void  addContact(void);
+		void searchContact(void);
+	
+};
+
+#endif
