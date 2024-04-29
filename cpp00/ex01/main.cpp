@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriafedorova <valeriafedorova@studen    +#+  +:+       +#+        */
+/*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:45:19 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/04/23 17:52:23 by valeriafedo      ###   ########.fr       */
+/*   Updated: 2024/04/29 17:31:22 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main(void)
             break;
         else if (cmd_inpt == "ADD")
             book.addContact();
-        else if (cmd_inpt == "SEARCH")
-            book.searchContact();
+        // else if (cmd_inpt == "SEARCH")
+        //     book.searchContact();
         else if (cmd_inpt == "EXIT")
             break ;
         else

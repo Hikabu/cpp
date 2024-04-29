@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: valeriafedorova <valeriafedorova@studen    +#+  +:+       +#+         #
+#    By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 17:53:31 by vfedorov          #+#    #+#              #
-#    Updated: 2024/04/24 13:52:42 by valeriafedo      ###   ########.fr        #
+#    Updated: 2024/04/29 16:42:30 by vfedorov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,11 @@ RM			=	rm -f
 
 SRCS		=	PhoneBook.cpp Contact.cpp main.cpp
 
+HEADER		=	PhoneBook.hpp Contact.hpp
+
 OBJS		=	${SRCS:%.cpp=%.o}
 
-%.o:		%.cpp
+%.o:		%.cpp  $(HEADER)
 			$(CC) $(CPPFLAGS) -c $< -o $@
 
 

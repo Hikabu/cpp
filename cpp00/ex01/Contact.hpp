@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriafedorova <valeriafedorova@studen    +#+  +:+       +#+        */
+/*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:45:13 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/04/23 19:13:09 by valeriafedo      ###   ########.fr       */
+/*   Updated: 2024/04/29 16:49:49 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include "PhoneBook.hpp"
+// # include "PhoneBook.hpp"
 
+# include <iostream>
 class Contact
 {
     private:
@@ -23,13 +24,14 @@ class Contact
         std::string _nickName;
         std::string _phoneNumber;
         std::string _darkestSecret;
-		void getInput(std::string &str, std::string message);
+		
     public:
         Contact();
         ~Contact();
 
 		void init(void);
         void	SetFirstName(std::string _firstName);
+        void getInput(std::string &str, std::string message);
 		// void    SetLastName(std::string _lastName);
 		// void    SetNickName(std::string _nickName);
 		// void    SetFhoneNumber(std::string _phoneNumber);
