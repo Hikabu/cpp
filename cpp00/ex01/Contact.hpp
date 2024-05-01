@@ -6,7 +6,7 @@
 /*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:45:13 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/04/29 16:49:49 by vfedorov         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:53:02 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,18 @@ class Contact
 {
     private:
         std::string	_firstName;
-        std::string _lastName;
+        std::string _surnameName;
         std::string _nickName;
         std::string _phoneNumber;
         std::string _darkestSecret;
-		
+		int _index;
     public:
         Contact();
         ~Contact();
-
-		void init(void);
-        void	SetFirstName(std::string _firstName);
-        void getInput(std::string &str, std::string message);
-		// void    SetLastName(std::string _lastName);
-		// void    SetNickName(std::string _nickName);
-		// void    SetFhoneNumber(std::string _phoneNumber);
-		// void    SetDarkestSecret(std::string _darkestSecret);
+        std::string getInput(std::string message);
+        void setIndex(int i);
+        void init(void);
+        void watch(int i);
 };
 
 #endif

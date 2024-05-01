@@ -6,7 +6,7 @@
 /*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:45:05 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/04/29 16:48:45 by vfedorov         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:21:23 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ std::string getInput(std::string message)
 			std::cout << "I can not see any data. Please, try again." << std::endl;
 	}	while (str.empty());
 	return (str);
+}
+void Contact::setIndex(int i)
+{
+	Contact::_index = i;
 }
