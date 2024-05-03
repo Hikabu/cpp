@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: valeriafedorova <valeriafedorova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:45:25 by valeriafedo       #+#    #+#             */
-/*   Updated: 2024/05/01 17:00:19 by vfedorov         ###   ########.fr       */
+/*   Updated: 2024/05/03 08:39:28 by valeriafedo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void Contact::watch(int i)
 		std::cout << std::setw(10) << _nickName;
 	std::cout << "|" << std::endl;
 	
-}  
+}
 
 void PhoneBook::print()
 {
@@ -82,14 +82,19 @@ void PhoneBook::searchContact()
 {
 	int i;
 	std::string index;
-
+	
 	std::cout << "Enter the index of the contact: ";
 	std::getline(std::cin, index);
 	if (std::cin.eof())
 		exit (1);
+	if (index.empty() || (index.find_first_not_of("012345678") != std::string::npos))
+	{
+		std::cout << "I can not see any data. Please, try again." << std::endl;
+		return ;
+	}
 	i = std::stoi(index);
-	if (i >= 0 && i < 8)
-		_contacts[i].init();
+	if (i >= 0 && i <= 8)
+		_contacts[i].showIndex(i);
 	else
 		std::cout << "Index does not exist" << std::endl;
 }
