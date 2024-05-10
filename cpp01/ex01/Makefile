@@ -6,7 +6,7 @@
 #    By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 06:22:51 by vfedorov          #+#    #+#              #
-#    Updated: 2024/05/09 06:23:10 by vfedorov         ###   ########.fr        #
+#    Updated: 2024/05/10 21:44:48 by vfedorov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CPPFLAGS	+=	-std=c++98
 
 RM			=	rm -f
 
-SRCS		=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS		=	Zombie.cpp zombieHorde.cpp main.cpp
 
 HEADER		=	Zombie.hpp
 
