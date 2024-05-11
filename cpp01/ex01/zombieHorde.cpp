@@ -1,10 +1,18 @@
 #include "Zombie.hpp"
 
+void Zombie::setName(std::string name)
+{
+    this->name = name;
+}
+
 Zombie* zombieHorde( int N, std::string name )
 {
-    Zombie zm;
-    std::string *foReturn
+    Zombie *foReturn = new Zombie[N];
+    
     for (int i = 0;  i < N; i++)
-        foReturn = zm.resurrect(name);
+    {
+        foReturn[i].setName(name);
+        foReturn->announce();
+    }
     return (foReturn);
 }

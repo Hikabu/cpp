@@ -11,9 +11,11 @@ class Zombie{
     public:
         Zombie();
         ~Zombie();
-        std::string *resurrect(std::string name);
         Zombie(std::string name);
+        void announce( void );
+        void setName(std::string name);
 };
 Zombie* zombieHorde( int N, std::string name );
+Zombie* resurrect(std::string name);
 
 #endif
