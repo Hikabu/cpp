@@ -6,7 +6,7 @@
 /*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 18:52:24 by vfedorov          #+#    #+#             */
-/*   Updated: 2024/05/12 22:02:32 by vfedorov         ###   ########.fr       */
+/*   Updated: 2024/05/13 18:32:04 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 #include <iostream>
 #include <string>
+#include "Weapon.hpp"
 
-class HumanA
+class Weapon;
+class HumanA //can use weapon and it gas name
 {
 	private:
 		std::string _name;
+		const Weapon &_weapon;
 	public:
 		void	attack();
-		void    setType();
-		HumanA();
+		HumanA(std::string name, Weapon& weapon);
 		~HumanA();
-		HumanA(std::string name, const Weapon &_weapon);
 		
 };
 

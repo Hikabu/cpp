@@ -6,7 +6,7 @@
 /*   By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:25:33 by vfedorov          #+#    #+#             */
-/*   Updated: 2024/05/12 19:46:09 by vfedorov         ###   ########.fr       */
+/*   Updated: 2024/05/13 18:19:16 by vfedorov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <string>
 #include <iostream>
 
-class Weapon
+class Weapon   //we gave human armor and weapon 
 {
     private:
         std::string _type;
@@ -28,7 +28,7 @@ class Weapon
         ~Weapon();
         Weapon(std::string name);
         void setType(const std::string &chant);
-        std::string *getType();
+        const std::string &getType( void ) const;
 };
 
 #endif
