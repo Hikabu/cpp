@@ -6,13 +6,13 @@
 #    By: vfedorov <vfedorov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 18:49:59 by vfedorov          #+#    #+#              #
-#    Updated: 2024/05/13 18:51:11 by vfedorov         ###   ########.fr        #
+#    Updated: 2024/05/16 12:44:08 by vfedorov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	letsReplace
 CC			=	c++
-CPPFLAGS	=	-Wall -Wextra -Werror
+CPPFLAGS	=	-Wall -Wextra -Werror -g
 CPPFLAGS	+=	-std=c++98
 
 RM			=	rm -f
