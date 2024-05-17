@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp01/ex04/letsReplace",
-            "args": ["filname", "A", "REPLACED"],
+            "program": "${workspaceFolder}/cpp01/ex06/Harl",
+            "args": ["DEBUG"],
             "cwd": "${workspaceFolder}"
         }
     ]
