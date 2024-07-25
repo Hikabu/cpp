@@ -63,6 +63,12 @@
         "iomanip": "cpp",
         "fstream": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "fixed.hpp": "c",
+        "__verbose_abort": "cpp",
+        "clocale": "cpp",
+        "execution": "cpp",
+        "unordered_set": "cpp",
+        "variant": "cpp"
     }
 }
