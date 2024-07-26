@@ -5,19 +5,18 @@ int main(){
     ClapTrap enemy("Volandemort");
     ClapTrap hero("HarryPotter");
 
-    enemy.setAttackDamage(50);
+    enemy.setAttackDamage(51);
     hero.setAttackDamage (51);
-    enemy.setEnergyPoints(1);
-    hero.setEnergyPoints(1);
+    enemy.setEnergyPoints(0);
+    hero.setEnergyPoints(0);
     enemy.status();
     hero.status();
 
     hero.attack("Volandemort");
     enemy.attack("HarryPotter");
-    enemy.beRepaired(1);
-    hero.beRepaired(1);
+    enemy.beRepaired(0);
+    hero.beRepaired(0);
     hero.takeDamage(enemy.getAttackDamage());
     enemy.takeDamage(hero.getAttackDamage());
-
-   
 }
+

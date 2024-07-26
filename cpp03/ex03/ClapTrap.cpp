@@ -1,28 +1,22 @@
 #include "ClapTrap.hpp"
 
-#define COLOR_RED "\x1b[31m"
-#define COLOR_GREEN "\x1b[32m"
-#define COLOR_YELLOW "\x1b[33m"
-#define COLOR_GREY "\x1b[90m"
-#define COLOR_CLEAN "\x1b[0m"
-
-ClapTrap::ClapTrap(std::string name) : _name(name),
-										_hitPoints(10),
-										_energyPoints(10),
-										_attackDamage(0)
-
+ClapTrap::ClapTrap(const std::string &name):
+                             _name(name),
+                             _hitPoints(10),
+                            _energyPoints(10),
+                            _attackDamage(0)
 {
-    
-    std::cout << "Constructor called" << std::endl;
+
+    std::cout << "Constructor called for ClapTrap" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &toCopy){
     *this = toCopy;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called for ClapTrap" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &toCopy){
-    std::cout << "ClapTrap assignation operator called" << std::endl;
+    std::cout << "ClapTrap assignation operator called for ClapTrap" << std::endl;
     this->_name = toCopy._name;
     this->_hitPoints = toCopy._hitPoints;
     this->_energyPoints = toCopy._energyPoints;
@@ -30,17 +24,25 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &toCopy){
     return (*this);
 }
 
-ClapTrap::~ClapTrap(){
-    std::cout << "Destructor called" << std::endl;
+ClapTrap::ClapTrap(const std::string &name, int hitPoints, int energyPoints, int attackPoints) : _name(name),
+                                                                                                _hitPoints(hitPoints),
+                                                                                                _energyPoints(energyPoints),
+                                                                                                _attackDamage(attackPoints){
+    std::cout << "Constructors with parametrs called" << std::endl;
 }
 
+ClapTrap::~ClapTrap(){
+    std::cout << "Destructor called for ClapTrap" << std::endl;
+}
 
 //get/set
+const std::string&	ClapTrap::getName() const { return _name; }
 
 int ClapTrap::getHitPoints() const { return _hitPoints; }
 int ClapTrap::getAttackDamage() const { return _attackDamage; }
 int ClapTrap::getEnergyPoints() const { return _energyPoints; }
 
+void ClapTrap::setName(const std::string &name) {_name  = name; }
 void ClapTrap::setHitPoints( unsigned const int hitPoints ) {_hitPoints = hitPoints >= 0 ? hitPoints : 0;}
 void ClapTrap::setAttackDamage( unsigned const int attackDamage) { _attackDamage = attackDamage >= 0 ? attackDamage : 0; }
 void ClapTrap::setEnergyPoints( unsigned const int energyPoints) {_energyPoints = energyPoints >= 0 ? energyPoints : 0; }
@@ -49,9 +51,9 @@ void ClapTrap::setEnergyPoints( unsigned const int energyPoints) {_energyPoints 
 
 void ClapTrap::status(){
     std::cout << COLOR_GREY << "ClapTrap status: " << _name <<
-                                "\n hit_points: " << _hitPoints <<
-                                "\n energyPoints: " << _energyPoints <<
-                                "\n DamagePoints: " << _attackDamage <<
+                                "\n\t hit_points: " << _hitPoints <<
+                                "\n\t energyPoints: " << _energyPoints <<
+                                "\n\t DamagePoints: " << _attackDamage <<
                                 COLOR_CLEAN << std::endl <<std::endl;
 }
 

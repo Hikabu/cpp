@@ -10,7 +10,7 @@ FILES		= main ClapTrap
 
 SRC			= $(FILES:=.cpp)
 OBJ      = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= $(wildcard *.hpp)
+HEADER		= ClapTrap.hpp
 
 all: $(NAME)
 
