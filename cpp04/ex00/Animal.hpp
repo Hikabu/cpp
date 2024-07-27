@@ -1,7 +1,11 @@
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-#include <iostream>>
+#include <iostream>
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 class Animal{
     protected:
@@ -13,6 +17,11 @@ class Animal{
         Animal &operator=(const Animal &toCopy);
         ~Animal();
 
+        //get
+        std::string getType() const;
 };
+
+
+
 
 #endif

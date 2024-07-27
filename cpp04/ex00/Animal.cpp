@@ -19,5 +19,10 @@ Animal &Animal::operator=(const Animal &toCopy){
 }
 
 Animal::~Animal(){
-
+    std::cout << "Animal destructor called" << std::endl;
 }
+
+//get
+
+std::string Animal::getType() const {return _type;}
+

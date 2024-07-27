@@ -1,11 +1,20 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include <iostream>
-#include "Animal.hpp"
+# include "Animal.hpp"
+# include <iostream>
 
-class Cat : public virtual Animal{
+class Cat : public Animal{
+    protected:
+        std::string _type;
 
-}
+    public:
+        Cat();
+        Cat(const Cat &toCopy);
+        Cat &operator=(const Cat &toCopy);
+        ~Cat();
+
+};
 
 #endif
+

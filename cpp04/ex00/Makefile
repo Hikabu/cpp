@@ -6,11 +6,11 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Dog Cat Animal
+FILES		= main Dog Cat Animal WrongAnimal WrongCAt
 
 SRC			= $(FILES:=.cpp)
 OBJ      = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp
+HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
 
 all: $(NAME)
 
