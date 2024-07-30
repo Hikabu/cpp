@@ -1,4 +1,4 @@
-NAME		= polymorphism
+NAME		= abstract
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,11 +6,12 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Dog Cat Animal WrongAnimal WrongCat
+FILES		= main Dog Cat Animal WrongAnimal WrongCat Brain
 
 SRC			= $(FILES:=.cpp)
-OBJ      = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
+OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
+HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp \
+				Brain.hpp
 
 all: $(NAME)
 

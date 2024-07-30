@@ -1,4 +1,4 @@
-NAME		= polymorphism
+NAME		= game
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,11 +6,13 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Dog Cat Animal WrongAnimal WrongCat
+FILES		= main AMateria Ice Cure ICharacter \
+				Character MaterialSource
 
 SRC			= $(FILES:=.cpp)
-OBJ      = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
+OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
+HEADER		= AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp \
+				Character.hpp  MaterialSource.hpp IMaterialSource.hpp
 
 all: $(NAME)
 

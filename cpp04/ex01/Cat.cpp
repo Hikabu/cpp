@@ -1,8 +1,10 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat() : Animal(){
     std::cout << "Cat constructor called" << std::endl;
     _type = ("Cat");
+    _brain = new Brain();
 }
 
 Cat::Cat( const Cat &toCopy) : Animal(toCopy){
@@ -20,6 +22,7 @@ Cat &Cat::operator=(const Cat &toCopy){
 
 Cat::~Cat(){
     std::cout << "Cat destructor called" << std::endl;
+    delete _brain;
 }
 
 void Cat::makeSound() const{

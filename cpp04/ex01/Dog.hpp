@@ -2,9 +2,12 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
 class Dog : public Animal {
+    private:
+        Brain *_brain;
     protected:
         std::string _who;
     public:

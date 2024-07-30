@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+// abstract = one pure virtual function 
 class Animal {
     protected:
         std::string _type;
@@ -16,7 +17,7 @@ class Animal {
         //get
         std::string getType() const;
         void setType( std::string type);
-        void virtual makeSound() const; // dynamic binding resolved at runtime
+        void virtual makeSound() const = 0; // pure virtual function
 };
 
 
