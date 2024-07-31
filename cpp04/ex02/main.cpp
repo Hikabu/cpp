@@ -30,7 +30,7 @@ int main(){
     std ::cout << COLOR_CLEAN << std::endl;
     for (int i = 0; i < 8; i++)
     {
-        printf ("%d\n", i);
+        std::cout << i << std::endl;
         delete animals[i];
     }
     // system ("leaks brain");

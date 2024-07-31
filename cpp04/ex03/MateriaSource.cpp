@@ -3,7 +3,7 @@
 MateriaSource::MateriaSource(){
     for(int i = 0; i < 4; i++)
         _store[i] = NULL;
-    std::cout << "MateriaSource constructor called" << std::endl;
+    // std::cout << "MateriaSource constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource( const MateriaSource &copy) {
@@ -31,21 +31,21 @@ MateriaSource::~MateriaSource(){
     }
 }
 
-void MateriaSource::learnMateria(AMateria* materia){
+void MateriaSource::learnMateria(AMateria* materia){ //copy paste materia
     if (!materia)
         return ;
     if (_count < 4)
     {
-        _store[_count] = materia;
+        _store[_count] = materia->clone(); //not storing pointer 
         _count++;
     }
 
 }
 
-AMateria *MateriaSource::createMateria(std::string const &type){
+AMateria *MateriaSource::createMateria(std::string const &type){ //
     for (int i = 0; i < 4; i++)
     {
-        if (_store[i] == NULL && _store[i]->getType() == type)
+        if (_store[i] && _store[i]->getType() == type)
             return (_store[i]->clone());
     }
     std::cout << "cannot create materia" << std::endl;

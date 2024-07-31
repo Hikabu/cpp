@@ -5,7 +5,7 @@ Character::Character(std::string name){
     _count = 0;
     for(int i = 0; i < 4; i++)
         _inventory[i] = NULL;
-    std::cout << "Character constructor called" << std::endl;
+    // std::cout << "Character constructor called" << std::endl;
 }
 
 Character::Character( const Character &copy) {
