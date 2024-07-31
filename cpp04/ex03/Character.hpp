@@ -9,7 +9,7 @@ class Character : public ICharacter{ //pure cant drectly use its functions or in
     private:
         std::string _name;
         AMateria* _inventory[4];
-        AMateria** _onFloor;
+        // AMateria** _onFloor;
         int _count;
 
     public:

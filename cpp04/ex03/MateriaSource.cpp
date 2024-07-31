@@ -31,12 +31,13 @@ MateriaSource::~MateriaSource(){
     }
 }
 
-void MateriaSource::learnMateria(AMateria* materia){ //copy paste materia
-    if (!materia)
+void MateriaSource::learnMateria(AMateria* m){ //copy paste materia
+    if (!m)
         return ;
     if (_count < 4)
     {
-        _store[_count] = materia->clone(); //not storing pointer 
+        _store[_count] = m;
+        // _store[_count] = materia->clone(); //not storing pointer 
         _count++;
     }
 
