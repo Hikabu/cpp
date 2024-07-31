@@ -6,13 +6,13 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main AMateria Ice Cure ICharacter \
-				Character MaterialSource
+FILES		= main AMateria Ice Cure  \
+				Character MateriaSource
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
 HEADER		= AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp \
-				Character.hpp  MaterialSource.hpp IMaterialSource.hpp
+				Character.hpp  MateriaSource.hpp IMateriaSource.hpp
 
 all: $(NAME)
 

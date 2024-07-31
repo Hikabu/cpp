@@ -53,7 +53,7 @@ std::string const &Character::getName() const {return _name;}
 
 void Character::equip(AMateria* m){
     for (int i = 0; i < 4; i++){
-        if (_inventory[i] = NULL){
+        if (_inventory[i] == NULL){
             _inventory[i] = m;
             ++_count;
             return ;
@@ -63,7 +63,7 @@ void Character::equip(AMateria* m){
 }
 
 void Character::unequip(int idx){
-    if (idx < 0 || idx < 3 || !_count || !_inventory){
+    if (idx < 0 || idx < 4 || !_count || !_inventory[idx]){
         std::cout << _name << " is empty, how to unequip?" << std::endl;
         return ;
     }
