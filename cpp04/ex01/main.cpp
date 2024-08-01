@@ -9,30 +9,35 @@
 #define COLOR_DONT "\x1b[34m"
 
 int main(){
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
 
-    delete j;
-    delete i;
+    Dog basik;
+	{
+		Dog tmp = basik;
+	}
+    // const Animal* j = new Dog();
+    // const Animal* i = new Cat();
 
-    Animal *animals[8];
-    std::cout << COLOR_ANOTHER << std::endl;
-    for (int i = 0; i < 5; i++)
-        animals[i] = new Dog();
-    std ::cout << COLOR_CLEAN << std::endl;
-    std::cout << COLOR_YELLOW << std::endl;
-    for (int i = 0; i < 5; i++)
-        animals[i]->makeSound();
-    std ::cout << COLOR_CLEAN << std::endl;
-    std::cout << COLOR_DONT << std::endl;
-    for (int i = 5; i < 8; i++)
-        animals[i] = new Cat();
-    std ::cout << COLOR_CLEAN << std::endl;
-    for (int i = 0; i < 8; i++)
-    {
-        std::cout << i << std::endl;
-        delete animals[i];
-    }
-    // system ("leaks brain");
-    return (0);
+    // delete j;
+    // delete i;
+
+    // Animal *animals[8];
+    // std::cout << COLOR_ANOTHER << std::endl;
+    // for (int i = 0; i < 5; i++)
+    //     animals[i] = new Dog();
+    // std ::cout << COLOR_CLEAN << std::endl;
+    // std::cout << COLOR_YELLOW << std::endl;
+    // for (int i = 0; i < 5; i++)
+    //     animals[i]->makeSound();
+    // std ::cout << COLOR_CLEAN << std::endl;
+    // std::cout << COLOR_DONT << std::endl;
+    // for (int i = 5; i < 8; i++)
+    //     animals[i] = new Cat();
+    // std ::cout << COLOR_CLEAN << std::endl;
+    // for (int i = 0; i < 8; i++)
+    // {
+    //     std::cout << i << std::endl;
+    //     delete animals[i];
+    // }
+    // // system ("leaks brain");
+    // return (0);
 }
