@@ -9,6 +9,10 @@
 #define COLOR_DONT "\x1b[34m"
 
 int main(){
+        // Dog basik;
+    	// {
+	    // 	Dog tmp = basik;
+	    // }
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 

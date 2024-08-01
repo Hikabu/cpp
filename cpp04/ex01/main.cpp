@@ -10,9 +10,9 @@
 
 int main(){
 
-    Dog basik;
+    Cat basik;
 	{
-		Dog tmp = basik;
+		Cat tmp = basik;
 	}
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();

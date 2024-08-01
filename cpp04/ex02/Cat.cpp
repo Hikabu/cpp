@@ -1,22 +1,25 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(){
-    std::cout << "Cat constructor called" << std::endl;
+Cat::Cat() : Animal(), _brain(new Brain()){
     _type = ("Cat");
-    _brain = new Brain();
+    std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat &toCopy) {
-    *this = toCopy;
+Cat::Cat( const Cat &toCopy) : Animal(toCopy){
+    _brain = new Brain(*toCopy._brain);
+    _type = toCopy._type;
     std::cout << "Cat copy constructor called " << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &toCopy){
     std::cout << "Cat copy assignment constructor called" << std::endl;
-    if (this == &toCopy)
-        return (*this);
-    _type = toCopy._type;
+    if (this != &toCopy){
+        Animal::operator=(toCopy);
+        delete _brain;
+        _brain = new Brain(*toCopy._brain);
+        _type = toCopy._type;
+    }
     return (*this);
 }
 
