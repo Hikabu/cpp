@@ -29,6 +29,11 @@ Dog::~Dog(){
     std::cout << "Dog destructor called" << std::endl;
     delete _brain;
 }
+void Dog::setIdea(std::string idea) {
+    this->_who = idea;
+    }
+std::string Dog::getIdea() const {return this->_who;}
+
 void Dog::makeSound() const{
     std::cout << "Woof woof woof woof woof woof woof " << std::endl;
 }

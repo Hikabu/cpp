@@ -8,6 +8,8 @@
 class Cat : public Animal{
     private:
         Brain *_brain;
+    protected:
+        std::string _who;
     public:
         Cat();
         Cat(const Cat &toCopy);
@@ -15,6 +17,8 @@ class Cat : public Animal{
         virtual ~Cat();
 
         void virtual makeSound() const;
+        void setIdea(std::string idea);
+        std::string getIdea() const;
 
 };
 

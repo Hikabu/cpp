@@ -8,12 +8,43 @@
 #define COLOR_YELLOW "\x1b[33m"
 #define COLOR_DONT "\x1b[34m"
 
-int main(){
+// int main(){
 
-    Cat basik;
-	{
-		Cat tmp = basik;
-	}
+    // Cat basik;
+	// {
+	// 	Cat tmp = basik;
+	// }
+
+int    main(){
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+
+    delete j;
+    delete i;
+
+    // TEST BRAIN
+    std::cout << "\n=========================================" << std::endl;
+    Cat basic;
+    for (int i = 0; i < 5; i++)
+        basic.setIdea("blah");
+    std::cout << "basic before change :" << std::endl;
+    for (int i = 0; i < 5; i++)
+        std::cout << i << " = " << basic.getIdea() << std::endl;
+    {
+        Cat tmp = basic;
+        for (int i = 0; i < 5; i++)
+            tmp.setIdea("boo");
+        // TEST PRINT BOTH basic and tmp
+        std::cout << "basic:" << std::endl;
+        for (int i = 0; i < 5; i++)
+            std::cout << i << " = " << basic.getIdea() << std::endl;
+        std::cout << "tmp:" << std::endl;
+        for (int i = 0; i < 5; i++)
+            std::cout << i << " = " << tmp.getIdea() << std::endl;
+    }
+    std::cout << std::endl;
+    return 0;
+}
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();
 
@@ -40,4 +71,4 @@ int main(){
     // }
     // // system ("leaks brain");
     // return (0);
-}
+// }

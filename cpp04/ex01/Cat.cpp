@@ -24,11 +24,16 @@ Cat &Cat::operator=(const Cat &toCopy){
 }
 
 Cat::~Cat(){
-    std::cout << "Cat destructor called" << std::endl;
     delete _brain;
+    std::cout << "Cat destructor called" << std::endl;
 }
 
 void Cat::makeSound() const{
     std::cout << "Meow meow meow meow meow meow meow " << std::endl;
     
 }
+
+void Cat::setIdea(std::string idea) {
+    this->_who = idea;
+    }
+std::string Cat::getIdea() const {return this->_who;}

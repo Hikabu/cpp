@@ -31,7 +31,7 @@ MateriaSource::~MateriaSource(){
     }
 }
 
-void MateriaSource::learnMateria(AMateria* m){ //copy paste materia
+void MateriaSource::learnMateria(AMateria* m){ //is here available space
     if (!m)
         return ;
     if (_count < 4)

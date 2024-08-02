@@ -28,6 +28,11 @@ Cat::~Cat(){
     delete _brain;
 }
 
+void Cat::setIdea(std::string idea) {
+    this->_who = idea;
+}
+std::string Cat::getIdea() const {return this->_who;}
+
 void Cat::makeSound() const{
     std::cout << "Meow meow meow meow meow meow meow " << std::endl;
     
