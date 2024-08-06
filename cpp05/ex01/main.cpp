@@ -5,10 +5,15 @@
 #define COLOR_YELLOW "\x1b[33m"
 
 int main(){
+    try{
+        Bureaucrat  maggot("Maggot", 70);
+        Form        form("Form", 1, 2);
 
-    Bureaucrat  maggot("Maggot", 15);
-    Form        form("Form", 15, 4);
-
-    maggot.signForm(form);
-    std::cout << form << std::endl;
+        std::cout << form << std::endl;
+        maggot.signForm(form);
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
 }

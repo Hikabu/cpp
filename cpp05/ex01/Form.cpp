@@ -26,9 +26,9 @@ Form &Form::operator=(const Form &copy){
     return (*this);
 }
 std::ostream &operator<<(std::ostream &out, const Form& Form){
-    return (out << COLOR_A << "info about Form"  << "\n\tSignIn: " << Form.getSignIn() \
-        << "\n\tExecute: " << Form.getgradeExecReq() \
-        << "\n\tname is: " << Form.getName() << COLOR_CLEAN << std::endl);
+    return (out << COLOR_A << "info about Form"  << "\n\tForn grade for SignIn: " << Form.getSignIn() \
+        << "\n\tForm grade to Execute: " << Form.getgradeExecReq() \
+        << "\n\tand name is: " << Form.getName() << COLOR_CLEAN << std::endl);
 }
 Form::~Form(){}
 
@@ -48,7 +48,7 @@ const char *Form::GradeTooLowException::what() const throw(){
 }
 
 //functions 
-void    Form::beSigned(Bureaucrat& bureaucrat){
+void    Form::beSigned(Bureaucrat const &bureaucrat){
     if (bureaucrat.getGrade() > _gradeReqmnt)
         throw GradeTooLowException();
     _indicator = true;

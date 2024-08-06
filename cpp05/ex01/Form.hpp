@@ -2,6 +2,9 @@
 # define FORM_HPP
 
 #include <iostream>
+// #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form{
     private:
@@ -33,7 +36,7 @@ class Form{
         int         getgradeExecReq() const;
 
         //functions 
-        void beSigned(Bureaucrat& bureaucrat);
+        void beSigned(Bureaucrat const &bureaucrat);
        
 };
     std::ostream &operator<<(std::ostream &out, const Form& Form);
