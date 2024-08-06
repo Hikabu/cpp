@@ -10,7 +10,11 @@ Form::Form(const std::string &name,const int gradeReqmnt, const int gradeExecReq
                                 _gradeExecReq(gradeExecReq)
 {
     _indicator = false;
-    std::cout << "condtructor called" << std::endl; 
+    if (_gradeExecReq < 1 || _gradeReqmnt < 1)
+        throw(GradeTooHighException());
+    if (_gradeExecReq > 150 || _gradeReqmnt > 150)
+        throw(GradeTooLowException());
+    // std::cout << "condtructor called" << std::endl; 
 }
 
 Form::Form(const Form &copy) : _name(copy._name),

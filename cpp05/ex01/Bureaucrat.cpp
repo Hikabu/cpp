@@ -56,18 +56,27 @@ void Bureaucrat::decrementGrade(){
 		setGrade(_grade - 1);
 }
  void Bureaucrat::signForm(Form& isSigned){
-	if (isSigned.getIndicator() == true)
-		std::cout << _name << " signed " << isSigned.getName() << std::endl;
-	else
+	try {	
+			isSigned.beSigned(*this);
+			std::cout << _name << " signed " << isSigned.getName() << std::endl;
+		}	
+	catch (std::exception &e)
 		{
 			std::cout << _name << " couldn't sign " << isSigned.getName() \
-				<< " because " ;
-			throw(GradeTooHighException());
+				<< " because " << e.what() << std::endl;
 		}
+
+		/*if do it through if else - need allocate memort*/
+	// if (isSigned.getIndicator() == true)
+	// 	std::cout << _name << " signed " << isSigned.getName() << std::endl;
+	// else 
+	// 	{
+	// 		std::exception& e = *new GradeTooHighException;
+	// 		std::cout << _name << " couldn't sign " << isSigned.getName() \
+	// 			<< " because " << e.what() << std::endl;
+	// 	}
+	
 }
-
-
-
 
 //exceptions
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
