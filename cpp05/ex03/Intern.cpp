@@ -23,9 +23,9 @@
     return ("Form not found...");
  }
  AForm *Intern::makeForm(std::string const &formName, std::string const &formTarget) const{
-    AForm* ret = 0;
-    size_t i = 0;
-    std::string formNames[3] = {"ShrubberyCreationForm", "RobotomyRequestForm","PresidentialPardonForm" }; //arrayinit
+    AForm*  ret = 0;
+    int     i = 0;
+    std::string formNames[3] = {"shrubbery creation", "robotomy request", "presidential pardon" }; //arrayinit
     for (; formName != formNames[i] && i < 3; i++)
     switch(i)
     {

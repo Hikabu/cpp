@@ -16,9 +16,9 @@ int main()
 
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	delete rrf;
-	rrf = someRandomIntern.makeForm("shrubbery creation ", "Vender");
+	rrf = someRandomIntern.makeForm("shrubbery creation", "Vender");
 	delete rrf;
-	rrf = someRandomIntern.makeForm("presidential pardon ", "Dender");
+	rrf = someRandomIntern.makeForm("presidential pardon", "Dender");
 	delete rrf;
 
 	try{
