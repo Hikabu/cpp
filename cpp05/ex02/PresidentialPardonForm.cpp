@@ -10,6 +10,9 @@
 }
 
  PresidentialPardonForm & PresidentialPardonForm::operator=(const  PresidentialPardonForm &toCopy){
+    if (this == &toCopy)
+        return (*this);
+    AForm::operator=(toCopy);
     return (*this);
 }
 

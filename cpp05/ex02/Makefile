@@ -7,11 +7,13 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Bureaucrat AForm
+FILES		= main Bureaucrat AForm ShrubberyCreationForm \
+			  RobotomyRequestForm PresidentialPardonForm
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Bureaucrat.hpp AForm.hpp
+HEADER		= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
+			  RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 all: $(NAME)
 

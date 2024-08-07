@@ -40,8 +40,8 @@ class AForm{
         virtual void        setTarget(const std::string target);
 
         //functions 
-        void virtual beSigned(Bureaucrat const &bureaucrat) = 0;
-        void virtual execute(AForm const &form) const = 0;
+        void virtual beSigned(Bureaucrat const &bureaucrat);
+        void virtual execute(Bureaucrat const &executor) const = 0;
        
 };
     std::ostream &operator<<(std::ostream &out, const AForm& AForm);

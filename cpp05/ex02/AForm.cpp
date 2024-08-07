@@ -30,12 +30,12 @@ AForm &AForm::operator=(const AForm &copy){
     return (*this);
 }
 std::ostream &operator<<(std::ostream &out, const AForm& AForm){
-    return (out << COLOR_A << "info about AForm"  << "\n\tForn grade for SignIn: " << AForm.getSignIn() \
-        << "\n\tAForm grade to Execute: " << AForm.getgradeExecReq() \
-        << "\n\tand name is: " << AForm.getName() << COLOR_CLEAN << std::endl);
+    return (out << COLOR_A << "Info about " << AForm.getName()<< COLOR_CLEAN  \
+        << "\n\tForm grade for SignIn: " << AForm.getSignIn()   \
+        << "\n\tForm grade to Execute: " << AForm.getgradeExecReq() \
+        << "\n\tForm is signed: " << AForm.getIndicator() << std::endl);
 }
 AForm::~AForm(){}
-
 //get set
 std::string AForm::getName() const {return _name;}
 bool        AForm::getIndicator() const {return _indicator;}
@@ -53,7 +53,6 @@ const char *AForm::GradeTooHighException::what() const throw(){
 const char *AForm::GradeTooLowException::what() const throw(){
     return ("Grade is too low...");
 }
-
 //functions 
 void    AForm::beSigned(Bureaucrat const &bureaucrat){
     if (bureaucrat.getGrade() > _gradeReqmnt)

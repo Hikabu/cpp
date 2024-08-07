@@ -6,9 +6,9 @@
 #define COLOR_GREY "\x1b[90m"
 #define COLOR_CLEAN "\x1b[0m"
 
- RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
+ RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45),
+                                                                        _target(target)
 {
-
 }
 
  RobotomyRequestForm:: RobotomyRequestForm(const RobotomyRequestForm &toCopy) : AForm(toCopy){
@@ -17,11 +17,20 @@
 }
 
  RobotomyRequestForm & RobotomyRequestForm::operator=(const  RobotomyRequestForm &toCopy) {
-    
+    if (this == &toCopy)
+        return (*this);
+    AForm::operator=(toCopy);
     return (*this);
 }
 
- RobotomyRequestForm::~ RobotomyRequestForm(){
+ RobotomyRequestForm::~ RobotomyRequestForm(){}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
+    (void)executor;
+    std::cout << "SegFoultSegFoultSegFoultSegFoultSegFoult" << std::endl;
+    int randVal = std::rand();
+    if (randVal % 2 == 0)
+        std::cout << _target << " has been robotomized successfully " << std::endl;
+    else
+        std::cout << getTarget() << " robotomy failed " << std::endl;
 }
-
-
