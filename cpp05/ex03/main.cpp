@@ -3,6 +3,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 #define COLOR_CLEAN "\x1b[0m"
 #define COLOR_YELLOW "\x1b[33m"
@@ -10,57 +11,21 @@
 
 int main()
 {
-	std::cout << COLOR_BLUE << "\t\t----------Create bureaucrat----------" << COLOR_CLEAN << std::endl;
-	Bureaucrat Harry("Harry", 25);
+	Intern	someRandomIntern;
+	AForm*	rrf;
 
-	std::cout << Harry;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	delete rrf;
+	rrf = someRandomIntern.makeForm("shrubbery creation ", "Vender");
+	delete rrf;
+	rrf = someRandomIntern.makeForm("presidential pardon ", "Dender");
+	delete rrf;
 
-	std::cout << COLOR_BLUE << "\t\t----------Create Form----------" << COLOR_CLEAN << std::endl;
-	ShrubberyCreationForm Form("Shrubbery");
-	RobotomyRequestForm Form1("Robotomy");
-	PresidentialPardonForm Form2("President");
-
-	std::cout << Form;
-	std::cout << Form1;
-	std::cout << Form2;
-	
-		std::cout << COLOR_BLUE << "\t\t----------SHrubberyForm----------" << COLOR_CLEAN << std::endl;
-		Harry.signForm(Form);
-		Harry.executeForm(Form);
-		std::cout << COLOR_BLUE << "\t\t----------RobotyForm----------" << COLOR_CLEAN << std::endl;
-		Harry.signForm(Form1);
-		Harry.executeForm(Form1);
-		Harry.executeForm(Form1);
-		Harry.executeForm(Form1);
-		Harry.executeForm(Form1);
-		std::cout << COLOR_BLUE << "\t\t----------PresidentForm----------" << COLOR_CLEAN << std::endl;
-		Harry.signForm(Form2);
-		Harry.executeForm(Form2);
-
-		// std::cout << COLOR_BLUE << "\t\t----------TooLow----------" << COLOR_CLEAN << std::endl;
-
-			// Bureaucrat Harry("Harry", 151);
-
-		// std::cout << "\tSHrubberyForm" << std::endl;
-		// try{Harry.executeForm(Form);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
-		// 	std::cout << "\tRobotomForm" << std::endl;
-		// try{Harry.executeForm(Form1);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
-		// 	std::cout << "\tPresidentForm" << std::endl;
-		// try{Harry.executeForm(Form2);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
-
-		// std::cout << COLOR_BLUE << "\t\t----------Toohigh----------" << COLOR_CLEAN << std::endl;
-			// Bureaucrat Harry("Harry", 0);
-
-		// 	std::cout << "\tSHrubberyForm" << std::endl;
-		// try{Harry.executeForm(Form);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
-		// 	std::cout << "\tRobotomForm" << std::endl;
-		// try{Harry.executeForm(Form1);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
-		// 	std::cout << "\tPresidentForm" << std::endl;
-		// try{Harry.executeForm(Form2);}
-		// catch(std::exception &e){std::cout << e.what() << std::endl;}
+	try{
+		rrf = someRandomIntern.makeForm("presidential pardOmen ", "Dender");
+		delete rrf;
+	}
+	catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 }

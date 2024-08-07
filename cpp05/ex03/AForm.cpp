@@ -4,6 +4,11 @@
 #define COLOR_CLEAN "\x1b[0m"
 #define COLOR_A "\x1b[34m"
 
+AForm::AForm() : _name("AForm") , _gradeReqmnt(150), _gradeExecReq (150)
+{
+	_indicator = false;
+}
+
 AForm::AForm(const std::string &name,const int gradeReqmnt, const int gradeExecReq) : 
                                 _name(name),
                                 _gradeReqmnt(gradeReqmnt),

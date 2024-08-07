@@ -14,6 +14,7 @@ class AForm{
         std::string         _target;
 
     public:
+        AForm();
         AForm(const std::string &name, const int gradeReqmnt, const int gradeExecReq);
         AForm(const AForm &copy);
         AForm &operator=(const AForm &copy);
