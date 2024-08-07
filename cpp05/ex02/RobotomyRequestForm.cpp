@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 
 #define COLOR_RED "\x1b[31m"
 #define COLOR_GREEN "\x1b[32m"
@@ -26,7 +27,10 @@
  RobotomyRequestForm::~ RobotomyRequestForm(){}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
-    (void)executor;
+    if (executor.getGrade() > AForm::getgradeExecReq())
+        throw GradeTooLowException();
+    else if (getIndicator() == false)
+        throw FormNotSignedException();
     std::cout << COLOR_GREEN << "Some noises: SegFoultSegFoultSegFoultSegFoultSegFoult" << COLOR_CLEAN << std::endl;
     int randVal = std::rand();
     if (randVal % 2 == 0)

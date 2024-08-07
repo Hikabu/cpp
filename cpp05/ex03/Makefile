@@ -1,4 +1,4 @@
-NAME		= maggots
+NAME		= president
 	
 CC			= c++
 # FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
@@ -7,11 +7,13 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Bureaucrat Form
+FILES		= main Bureaucrat AForm ShrubberyCreationForm \
+			  RobotomyRequestForm PresidentialPardonForm
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Bureaucrat.hpp Form.hpp
+HEADER		= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
+			  RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 all: $(NAME)
 

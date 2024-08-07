@@ -1,29 +1,60 @@
 #include "ShrubberyCreationForm.hpp"
-
-#define COLOR_RED "\x1b[31m"
-#define COLOR_GREEN "\x1b[32m"
-#define COLOR_YELLOW "\x1b[33m"
-#define COLOR_GREY "\x1b[90m"
-#define COLOR_CLEAN "\x1b[0m"
-
- ShrubberyCreationForm::ShrubberyCreationForm()
+#include "Bureaucrat.hpp"
+ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm ("ShrubberyCreationForm", 145, 137),
+                                                                            _target(target)
 {
-    
-    std::cout << "Constructor called" << std::endl;
 }
 
- ShrubberyCreationForm:: ShrubberyCreationForm(const  ShrubberyCreationForm &toCopy){
+ ShrubberyCreationForm:: ShrubberyCreationForm(const  ShrubberyCreationForm &toCopy) : AForm(toCopy)
+{
     *this = toCopy;
-    std::cout << "Copy constructor called" << std::endl;
 }
 
- ShrubberyCreationForm & ShrubberyCreationForm::operator=(const  ShrubberyCreationForm &toCopy){
-    std::cout << " ShrubberyCreationForm assignation operator called" << std::endl;
-    return (*this);
+ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const  ShrubberyCreationForm &toCopy)
+ {
+    if (this == &toCopy)
+        return (*this);
+    AForm::operator=(toCopy); //copy itself 
+    return(*this);
 }
 
- ShrubberyCreationForm::~ ShrubberyCreationForm(){
-    std::cout << "Destructor called" << std::endl;
-}
+ ShrubberyCreationForm::~ ShrubberyCreationForm()
+ {
+ }
 
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > AForm::getgradeExecReq())
+        throw GradeTooLowException();
+    else if (getIndicator() == false)
+        throw FormNotSignedException();
+	std::ofstream File(_target + "_shrubbery");
+
+	File << "                    ___" << std::endl;
+    File << "                _,-'\"\"   \"\"\"\"`--." << std::endl;
+    File << "             ,-'          __,,-- \\" << std::endl;
+    File << "           ,\'    __,--\"\"\"\"dF      )" << std::endl;
+    File << "          /   .-\"Hb_,--\"\"dF      /" << std::endl;
+    File << "        ,\'       _Hb ___dF\"-._,-'" << std::endl;
+    File << "      ,'      _,-\"\"\"\"   \"\"--..__" << std::endl;
+    File << "     (     ,-'                  `." << std::endl;
+    File << "      `._,'     _   _             ;" << std::endl;
+    File << "       ,'     ,' `-'Hb-.___..._,-'" << std::endl;
+    File << "       \\    ,'\"Hb.-\'HH`-.dHF\"" << std::endl;
+    File << "        `--\'   \"Hb  HH  dF\"" << std::endl;
+    File << "                \"Hb HH dF" << std::endl;
+    File << "                 \"HbHHdF" << std::endl;
+    File << "                  |HHHF" << std::endl;
+    File << "                  |HHH|" << std::endl;
+    File << "                  |HHH|" << std::endl;
+    File << "                  |HHH|" << std::endl;
+    File << "                  |HHH|" << std::endl;
+    File << "                  dHHHb" << std::endl;
+    File << "                .dFd|bHb.               o" << std::endl;
+    File << "      o       .dHFdH|HbTHb.          o /" << std::endl;
+    File << "\\  Y  |  \\__,dHHFdHH|HHhoHHb.__Krogg  Y" << std::endl;
+    File << "##########################################" << std::endl;
+    File.close();
+	
+}
 

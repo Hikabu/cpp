@@ -2,18 +2,19 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
+# include "AForm.hpp"
 
-class ShrubberyCreationForm {
+class ShrubberyCreationForm : public AForm{
     private:
-
-
-
+        std::string _target;
     public:
-        ShrubberyCreationForm ();
+        ShrubberyCreationForm (const std::string target);
         ShrubberyCreationForm (const ShrubberyCreationForm  &toCopy);
         ShrubberyCreationForm  &operator=(const ShrubberyCreationForm  &value);
-        ~ShrubberyCreationForm ();
+        virtual ~ShrubberyCreationForm ();
 
+        virtual void execute(Bureaucrat const& executor) const;
 };
 
 

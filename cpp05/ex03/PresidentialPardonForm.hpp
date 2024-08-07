@@ -2,17 +2,19 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
+# include "AForm.hpp"
 
-class PresidentialPardonForm {
+class PresidentialPardonForm : public AForm{
     private:
-
-
-
+        std::string _target;
     public:
-        PresidentialPardonForm ();
+        PresidentialPardonForm (std::string _target);
         PresidentialPardonForm (const PresidentialPardonForm  &toCopy);
         PresidentialPardonForm  &operator=(const PresidentialPardonForm  &value);
-        ~PresidentialPardonForm ();
+        virtual ~PresidentialPardonForm ();
+
+        void execute(Bureaucrat const &executor) const;
+
 
 };
 
