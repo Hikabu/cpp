@@ -24,7 +24,6 @@
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	// AForm::execute(executor);
 	(void)executor;
 	std::ofstream File(_target + "_shrubbery");
 

@@ -27,7 +27,7 @@
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
     (void)executor;
-    std::cout << "SegFoultSegFoultSegFoultSegFoultSegFoult" << std::endl;
+    std::cout << COLOR_GREEN << "Some noises: SegFoultSegFoultSegFoultSegFoultSegFoult" << COLOR_CLEAN << std::endl;
     int randVal = std::rand();
     if (randVal % 2 == 0)
         std::cout << _target << " has been robotomized successfully " << std::endl;
