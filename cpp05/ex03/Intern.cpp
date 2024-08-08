@@ -26,7 +26,7 @@
     AForm*  ret = 0;
     int     i = 0;
     std::string formNames[3] = {"shrubbery creation", "robotomy request", "presidential pardon" }; //arrayinit
-    for (; formName != formNames[i] && i < 3; i++)
+    for (; formName != formNames[i] && i < 3; i++);
     switch(i)
     {
         case 0:

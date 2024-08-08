@@ -11,9 +11,12 @@ class AForm{
         bool                _indicator;
         const int           _gradeReqmnt;
         const int           _gradeExecReq;
+    protected:
         std::string         _target;
 
     public:
+        AForm();
+		AForm (std::string target);
         AForm(const std::string &name, const int gradeReqmnt, const int gradeExecReq);
         AForm(const AForm &copy);
         AForm &operator=(const AForm &copy);
@@ -35,13 +38,12 @@ class AForm{
         };
 
         //get set
-        virtual std::string getName() const;
-        virtual bool        getIndicator() const;
-        virtual int         getSignIn() const;
-        virtual int         getgradeExecReq() const;
-        virtual std::string getTarget() const;
-
-        virtual void        setTarget(const std::string target);
+        virtual std::string const	&getName() const;
+        virtual bool        		getIndicator() const;
+        virtual int         		getSignIn() const;
+        virtual int         		getgradeExecReq() const;
+        virtual std::string 		getTarget() const;
+        virtual void        		setTarget(const std::string target);
 
         //functions 
         void virtual beSigned(Bureaucrat const &bureaucrat);

@@ -4,33 +4,41 @@
 #define COLOR_CLEAN "\x1b[0m"
 #define COLOR_A "\x1b[34m"
 
+Form::Form() : _name("name"), _gradeReqmnt(150), _gradeExecReq(150)
+{
+    _indicator = false; // because it is boolean variable
+}
+
 Form::Form(const std::string &name,const int gradeReqmnt, const int gradeExecReq) : 
                                 _name(name),
                                 _gradeReqmnt(gradeReqmnt),
                                 _gradeExecReq(gradeExecReq)
 {
-    _indicator = false;
+
     if (_gradeExecReq < 1 || _gradeReqmnt < 1)
         throw(GradeTooHighException());
     if (_gradeExecReq > 150 || _gradeReqmnt > 150)
         throw(GradeTooLowException());
-    // std::cout << "condtructor called" << std::endl; 
+    else
+        _indicator = false;
 }
 
 Form::Form(const Form &copy) : _name(copy._name),
+                                _indicator(copy._indicator),
                                 _gradeReqmnt(copy._gradeReqmnt),
-                                _gradeExecReq(copy._gradeExecReq){
-    *this = copy;
-}
+                                _gradeExecReq(copy._gradeExecReq){}
+
 
 Form &Form::operator=(const Form &copy){
     if (this != &copy){
-        this->_indicator = copy._indicator;
-    }
+        _indicator = copy._indicator; // const members must be initialized in the 
+    }                                 //constructor's member initializer list.                   
     return (*this);
 }
 std::ostream &operator<<(std::ostream &out, const Form& Form){
-    return (out << COLOR_A << "info about Form"  << "\n\tForn grade for SignIn: " << Form.getSignIn() \
+    return (out << COLOR_A                              \
+        << "info about Form"                            \
+        << "\n\tForn grade for SignIn: " << Form.getSignIn() \
         << "\n\tForm grade to Execute: " << Form.getgradeExecReq() \
         << "\n\tand name is: " << Form.getName() << COLOR_CLEAN << std::endl);
 }

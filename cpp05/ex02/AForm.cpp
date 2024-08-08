@@ -4,28 +4,34 @@
 #define COLOR_CLEAN "\x1b[0m"
 #define COLOR_A "\x1b[34m"
 
-AForm::AForm(const std::string &name,const int gradeReqmnt, const int gradeExecReq) : 
-                                _name(name),
-                                _gradeReqmnt(gradeReqmnt),
-                                _gradeExecReq(gradeExecReq)
+AForm::AForm() : _name("name"), _gradeReqmnt(150), _gradeExecReq(150)
+{
+    _indicator = false; // because it is boolean variable
+}
+
+AForm::AForm(std::string target){
+	
+} 
+
+AForm::AForm(const std::string &name, const int gradeReqmnt, const int gradeExecReq) : _name(name),
+																						_gradeReqmnt(gradeReqmnt),
+																						_gradeExecReq(gradeExecReq)
 {
     _indicator = false;
     if (_gradeExecReq < 1 || _gradeReqmnt < 1)
         throw(GradeTooHighException());
     if (_gradeExecReq > 150 || _gradeReqmnt > 150)
         throw(GradeTooLowException());
-    // std::cout << "condtructor called" << std::endl; 
 }
 
 AForm::AForm(const AForm &copy) : _name(copy._name),
+								_indicator(copy._indicator),
                                 _gradeReqmnt(copy._gradeReqmnt),
-                                _gradeExecReq(copy._gradeExecReq){
-    *this = copy;
-}
+                                _gradeExecReq(copy._gradeExecReq){}
 
 AForm &AForm::operator=(const AForm &copy){
     if (this != &copy){
-        this->_indicator = copy._indicator;
+        _indicator = copy._indicator;
     }
     return (*this);
 }
@@ -37,7 +43,7 @@ std::ostream &operator<<(std::ostream &out, const AForm& AForm){
 }
 AForm::~AForm(){}
 //get set
-std::string AForm::getName() const {return _name;}
+std::string const &AForm::getName() const {return _name;}
 bool        AForm::getIndicator() const {return _indicator;}
 int         AForm::getSignIn() const {return _gradeReqmnt;}
 int         AForm::getgradeExecReq() const {return _gradeExecReq;}

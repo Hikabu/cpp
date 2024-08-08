@@ -18,7 +18,6 @@ class Bureaucrat{
         // functions
         void        incrementGrade();
         void        decrementGrade();
-        int         checkValue(int grade);
 
         //exceptions
         class GradeTooHighException : public std::exception{

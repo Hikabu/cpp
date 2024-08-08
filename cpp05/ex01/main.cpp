@@ -9,10 +9,10 @@ int main(){
 
     std::cout << COLOR_YELLOW << "\t\tHow to fill up the form and what are the grades?" << std::endl;
     std::cout << "\tYou want sign form - the score should be higher than Bureaucrat grade \n" << COLOR_CLEAN << std::endl;
-        //if required grade is 0
+        // if required grade is 0
     try{
         Bureaucrat  maggot("Maggot", 6);
-        Form        form("Form", 9, 0);
+        Form        form("Form", 7, 1);
 
         std::cout << form << std::endl;
         maggot.signForm(form);
@@ -25,16 +25,9 @@ int main(){
      std::cout << COLOR_BLUE << "\t\t-----test1 create form-------" << COLOR_CLEAN << std::endl;
      try{
         Bureaucrat  maggot("Maggot", 6);
-        Form        form("Form", 1, 5); //too high
+        Form        form("Form", 1, 5); //too low
         std::cout << form << std::endl;
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-     try{
-        Bureaucrat  maggot("Maggot", 6);
-        Form        form("Form", 151, 5); //too low
-        std::cout << form << std::endl;
+        maggot.signForm(form);
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
@@ -44,6 +37,7 @@ int main(){
     try{
         Bureaucrat  maggot("Maggot", 6);
         Form        form("Form", 7, 1);
+        std::cout << form << std::endl;
         maggot.signForm(form);
     }
     catch (std::exception &e) {
