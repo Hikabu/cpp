@@ -10,6 +10,10 @@
 
 int main()
 {
+	// RobotomyRequestForm rono;
+	// rono.setTarget("hshs");
+	// std::cout << rono.getTarget() << std::endl;
+
 	std::cout << COLOR_BLUE << "\t\t----------Create bureaucrat----------" << COLOR_CLEAN << std::endl;
 	Bureaucrat Harry("Harry", 25);
 

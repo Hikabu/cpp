@@ -7,14 +7,17 @@
 #define COLOR_GREY "\x1b[90m"
 #define COLOR_CLEAN "\x1b[0m"
 
- RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45),
-                                                                        _target(target)
+ RobotomyRequestForm::RobotomyRequestForm() : AForm()                                                          
 {
+}
+ RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45)                                                          
+{
+    setTarget(target);
 }
 
  RobotomyRequestForm:: RobotomyRequestForm(const RobotomyRequestForm &toCopy) : AForm(toCopy){
-    *this = toCopy;
-    
+    // If ShrubberyCreationForm has any additional members not in AForm,
+    // initialize them here. Otherwise, leave this empty.
 }
 
  RobotomyRequestForm & RobotomyRequestForm::operator=(const  RobotomyRequestForm &toCopy) {

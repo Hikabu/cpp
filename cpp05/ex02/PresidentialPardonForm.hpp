@@ -6,7 +6,8 @@
 
 class PresidentialPardonForm : public AForm{
     public:
-        PresidentialPardonForm (std::string _target);
+        PresidentialPardonForm ();
+        PresidentialPardonForm (std::string _target); //constructors are not inherit 
         PresidentialPardonForm (const PresidentialPardonForm  &toCopy);
         PresidentialPardonForm  &operator=(const PresidentialPardonForm  &value);
         virtual ~PresidentialPardonForm ();

@@ -1,13 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
- ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm ("ShrubberyCreationForm", 145, 137),
-                                                                            _target(target)
-{
-}
+
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm ()
+ {
+ }
+
+ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm ("ShrubberyCreationForm", 145, 137)
+ {
+    setTarget(target);
+ }
 
  ShrubberyCreationForm:: ShrubberyCreationForm(const  ShrubberyCreationForm &toCopy) : AForm(toCopy)
 {
-    *this = toCopy;
+    // If ShrubberyCreationForm has any additional members not in AForm,
+    // initialize them here. Otherwise, leave this empty.
 }
 
  ShrubberyCreationForm &ShrubberyCreationForm::operator=(const  ShrubberyCreationForm &toCopy)

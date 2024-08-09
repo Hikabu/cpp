@@ -5,15 +5,15 @@
 # include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm{
-    private:
-        std::string _target;
     public:
-        PresidentialPardonForm (std::string _target);
+        PresidentialPardonForm ();
+        PresidentialPardonForm (std::string _target); //constructors are not inherit 
         PresidentialPardonForm (const PresidentialPardonForm  &toCopy);
         PresidentialPardonForm  &operator=(const PresidentialPardonForm  &value);
         virtual ~PresidentialPardonForm ();
 
         virtual void execute(Bureaucrat const &executor) const;
+
 
 };
 

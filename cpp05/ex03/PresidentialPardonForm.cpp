@@ -1,14 +1,17 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
-
- PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5),
-                                                                     _target(target)
+ PresidentialPardonForm::PresidentialPardonForm() : AForm()
 {
+}
+ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
+{
+    setTarget(target);
 }
 
  PresidentialPardonForm:: PresidentialPardonForm(const  PresidentialPardonForm &toCopy) : AForm(toCopy){
-    *this = toCopy;
+    // If ShrubberyCreationForm has any additional members not in AForm,
+    // initialize them here. Otherwise, leave this empty.
 }
 
  PresidentialPardonForm & PresidentialPardonForm::operator=(const  PresidentialPardonForm &toCopy){
@@ -20,7 +23,6 @@
 
  PresidentialPardonForm::~ PresidentialPardonForm(){
 }
-
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
     if (executor.getGrade() > AForm::getgradeExecReq())
