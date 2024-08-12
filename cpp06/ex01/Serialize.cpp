@@ -15,4 +15,9 @@
 
  Serialize::~ Serialize(){}
 
- 
+uintptr_t   Serialize::serialize(Data* ptr){
+   return (uintptr_t)ptr;
+}
+Data*       Serialize::deserialize(uintptr_t raw){
+   return (Data *)raw;
+}

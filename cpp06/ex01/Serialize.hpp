@@ -7,7 +7,7 @@ struct Data{
     std::string s1;
     std::string s2;
     int i;
-}
+};
 
 class Serialize{
     private:
