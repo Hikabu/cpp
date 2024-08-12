@@ -10,14 +10,17 @@
 }
 
  Serialize & Serialize::operator=(const  Serialize &toCopy) {
+    if (this != &toCopy)
+    {}
+
     return (*this);
 }
 
  Serialize::~ Serialize(){}
 
-uintptr_t   Serialize::serialize(Data* ptr){
-   return (uintptr_t)ptr;
+uintptr_t   Serialize::serializer(Data* ptr){
+   return (reinterpret_cast<uintptr_t>(ptr));
 }
 Data*       Serialize::deserialize(uintptr_t raw){
-   return (Data *)raw;
+   return (reinterpret_cast<Data*> (raw));
 }

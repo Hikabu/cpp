@@ -1,4 +1,4 @@
-NAME		= converter
+NAME		= identify
 	
 CC			= c++
 # FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
@@ -7,11 +7,11 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main ScalarConverter
+FILES		= main Base
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= ScalarConverter.hpp 
+HEADER		= Base.hpp A.hpp B.hpp C.hpp
 
 all: $(NAME)
 
