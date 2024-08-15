@@ -7,11 +7,11 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Serialize
+FILES		= main
 
-SRC			= $(FILES:=.cpp)
+SRC			= $(FILES:=.cpp) Array.tpp
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Serialize.hpp 
+HEADER		= Array.hpp 
 
 all: $(NAME)
 
