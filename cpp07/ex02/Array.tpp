@@ -31,7 +31,14 @@ Array<T> &Array<T>::operator=(const Array &copy)
 }
 
 template <typename T>
+Array<T>::~Array()
+{
+    if (_fillOut)
+        delete [] _fillOut;
+}
 
+
+template <typename T>
 T& Array<T>::operator[](unsigned int i)
 {
     if (i >= _size || i < 0 || _fillOut == NULL)
