@@ -69,7 +69,8 @@
         "clocale": "cpp",
         "execution": "cpp",
         "unordered_set": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "*.tpp": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
