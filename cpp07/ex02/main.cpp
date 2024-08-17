@@ -19,7 +19,7 @@ void compareArrays(const Array<T>& a, const Array<T>& b) {
 	}
 	if (a.size() == b.size()) {
 		std::cout << "Sizes of arrays are similar: OK" << std::endl;
-		for (int i = 0; i < a.size(); i++) {
+		for (unsigned int i = 0; i < a.size(); i++) {
 			if (&a[i] != &b[i])
 				std::cout << "Addresses of elements of arrays at index [" << i
 					<< "] are different: OK" << std::endl;
@@ -92,7 +92,7 @@ int main () {
 	std::cout << std::endl;
 	std::cout << "Variable \'arr2\'" << std::endl;
 	testArray(*arr2);
-	for (int i = 0; i < arr2->size(); ++i)
+	for (unsigned int i = 0; i < arr2->size(); ++i)
 		(*arr2)[i] = (*arr2)[i] * 10000;
 	std::cout << "\nVariable \'arr2\' is modified\n" << std::endl;
 	std::cout << "Variable \'arr2\':" << std::endl;
@@ -111,7 +111,7 @@ int main () {
 	std::cout << std::endl;
 	std::cout << "Variable \'arr4\'" << std::endl;
 	testArray(*arr4);
-	for (int i = 0; i < arr3->size(); ++i)
+	for (unsigned int i = 0; i < arr3->size(); ++i)
 		(*arr3)[i] = (*arr3)[i] + ": modified";
 	std::cout << "\nVariable \'arr3\' is modified\n" << std::endl;
 	std::cout << "Variable \'arr3\':" << std::endl;
@@ -127,7 +127,7 @@ int main () {
 	const Array<std::string>* arr5 = new const Array<std::string>(*arr4);
 	std::cout << "Original variable \'arr4\':" << std::endl;
 	testArray(*arr4);
-	for (int i = 0; i < arr3->size(); ++i)
+	for (unsigned int i = 0; i < arr3->size(); ++i)
 		(*arr3)[i] = (*arr3)[i] + ": modified for constant test";
 	std::cout << "\nVariable \'arr4\' is modified\n" << std::endl;
 	std::cout << "Modified variable \'arr4\':" << std::endl;
@@ -163,31 +163,55 @@ int main () {
 	return 0;
 }
 
-// Develop a class template Array that contains elements of type T and that implements
-// the following behavior and functions:
-//
-// • Construction with no parameter: Creates an empty array.
-//
-// • Construction with an unsigned int n as a parameter: Creates an array of n elements
-// initialized by default.
-// Tip: Try to compile int * a = new int(); then display *a.
-//
-// • Construction by copy and assignment operator. In both cases, modifying either the
-// original array or its copy after copying musn’t affect the other array.
-//
-// • You MUST use the operator new[] to allocate memory. Preventive allocation (al-
-// locating memory in advance) is forbidden. Your program must never access non-
-// allocated memory.
-//
-// • Elements can be accessed through the subscript operator: [ ].
-//
-// • When accessing an element with the [ ] operator, if its index is out of bounds, an
-// std::exception is thrown.
-//
-// • A member function size() that returns the number of elements in the array. This
-// member function takes no parameter and musn’t modify the current instance.
-// As usual, ensure everything works as expected and turn in a main.cpp file that
-// contains your tests.
 
+// #define MAX_VAL 750
+// int main(int, char**)
+// {
+//     Array<int> numbers(MAX_VAL);
+//     int* mirror = new int[MAX_VAL];
+//     srand(time(NULL));
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         const int value = rand();
+//         numbers[i] = value;
+//         mirror[i] = value;
+//     }
+//     //SCOPE 
+//     {
+//         Array<int> tmp = numbers;
+//         Array<int> test(tmp);
+//     }
 
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         if (mirror[i] != numbers[i])
+//         {
+//             std::cerr << "didn't save the same value!!" << std::endl;
+//             return 1;
+//         }
+//     }
+//     try
+//     {
+//         numbers[-2] = 0;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+//     try
+//     {
+//         numbers[MAX_VAL] = 0;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         numbers[i] = rand();
+//     }
+//     delete [] mirror;//
+//     return 0;
+// }
 

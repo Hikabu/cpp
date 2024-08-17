@@ -23,7 +23,7 @@ Array<T> &Array<T>::operator=(const Array &copy)
     {
         delete [] _fillOut;
         _size = copy._size;
-        _fillOut = copy._fillOut;
+        _fillOut = new T[_size];
         for (unsigned int i = 0; i < _size; i++)
             _fillOut[i] = copy._fillOut[i];
     }

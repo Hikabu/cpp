@@ -21,7 +21,7 @@ class Array
 		~Array();
 
 		//finctions
-		int size() const 
+		unsigned int size() const 
 		{
 			return (_size);
 		}
