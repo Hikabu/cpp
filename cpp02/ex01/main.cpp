@@ -21,3 +21,24 @@ int main()
 
     return (0);
  } 
+
+
+
+/*it will not compile heed to use double
+if instead of 3.1 we compare to 0.5, the comparison is 
+successful and the program displays Yes, because
+the number 0.5 can be represented with the accuracy 
+of the float type without losing decimal digits.*/
+
+
+
+//  #include <iostream> // Example 2.1.
+// int main()
+// {
+//     float a = 3.1;
+//     if(a == 3.1)
+//         std::cout << "Yes\n";
+//     else
+//         std::cout << "No\n";
+//     return 0;
+// }

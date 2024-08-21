@@ -9,9 +9,9 @@ OBJDIR = obj
 
 FILES		= main
 
-SRC			= $(FILES:=.cpp) Array.tpp
+SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Array.hpp 
+HEADER		= 
 
 all: $(NAME)
 
