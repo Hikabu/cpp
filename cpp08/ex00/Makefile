@@ -11,7 +11,7 @@ FILES		= main
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= 
+HEADER		= easyfind.hpp
 
 all: $(NAME)
 
