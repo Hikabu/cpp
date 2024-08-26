@@ -23,19 +23,31 @@ void    Span::addNumber(unsigned int n)
     else
         _vector.push_back(n);
 }
+
+Span::~Span(){}
+
 int Span::shortestSpan()
 {
     if (_vector.size() < 2)
         throw std::length_error ("Can't find, container is too short\n");
-    int possiblMin = _vector[1] - _vector[0];
-    for (int walker = 2; walker < _vector.size(); walker++)
+    std::vector<int> tmp(_vector);
+    std::sort(tmp.begin(), tmp.end());
+    int possiblMin = tmp[1] - tmp[0];
+    for (unsigned int walker = 2; walker < tmp.size(); walker++)
     {
-        if (_vector[walker] < )
+        if (possiblMin > tmp[walker] - tmp[walker - 1])
+            possiblMin =  (tmp[walker] - tmp[walker - 1]);
     }
-
+    return (possiblMin);
 }
 
 int Span::longestSpan()
 {
-
+    if (_vector.size() < 2)
+        throw std::length_error ("Can't find, container is too short\n");
+    std::vector<int> tmp(_vector);
+    std::sort(tmp.begin(), tmp.end());
+    unsigned int max =  (tmp[tmp.size() -1]  - tmp[0]);
+    return (max);
 }
+

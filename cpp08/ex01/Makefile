@@ -7,7 +7,7 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main Span.cpp
+FILES		= main Span
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
