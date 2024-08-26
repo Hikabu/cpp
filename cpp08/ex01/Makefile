@@ -1,17 +1,17 @@
-NAME		= array
+NAME		= Span
 	
 CC			= c++
-# FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
+# FLAGS		= -Wall -Wextra -Werror -std=c++17 -g3
 FLAGS		=  -Wall -Wextra -Werror -Wc++98-compat-pedantic -g3
 RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main
+FILES		= main Span.cpp
 
-SRC			= $(FILES:=.cpp) Array.tpp
+SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Array.hpp 
+HEADER		= Span.hpp
 
 all: $(NAME)
 

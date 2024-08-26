@@ -1,7 +1,7 @@
-NAME		= array
+NAME		= easyfind
 	
 CC			= c++
-# FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
+# FLAGS		= -Wall -Wextra -Werror -std=c++17 -g3
 FLAGS		=  -Wall -Wextra -Werror -Wc++98-compat-pedantic -g3
 RM			= rm -rf
 
