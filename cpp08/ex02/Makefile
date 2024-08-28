@@ -1,7 +1,7 @@
-NAME		= array
+NAME		= theMonstr
 	
 CC			= c++
-# FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
+# FLAGS		= -Wall -Wextra -Werror -std=c++17 -g3
 FLAGS		=  -Wall -Wextra -Werror -Wc++98-compat-pedantic -g3
 RM			= rm -rf
 
@@ -9,9 +9,9 @@ OBJDIR = obj
 
 FILES		= main
 
-SRC			= $(FILES:=.cpp) Array.tpp
+SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Array.hpp 
+HEADER		= MutantStack.hpp
 
 all: $(NAME)
 
