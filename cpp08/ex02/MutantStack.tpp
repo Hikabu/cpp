@@ -1,59 +1,64 @@
 #include "MutantStack.hpp"
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack() : std::stack<T>() {}
 
-MutantStack::MutantStack() : _n(0) {}
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack(const MutantStack<T, Container> &copy) : std::stack<T> (copy) {}
 
-MutantStack::MutantStack(unsigned int n) : _n(n) {}
-
-MutantStack::MutantStack(const MutantStack &copy) : _n(copy._n), _vector(copy._vector) {}
-
-MutantStack &MutantStack::operator=(const MutantStack &copy)
+template <typename T, typename Container>
+MutantStack<T, Container>&MutantStack<T, Container>::operator=(const MutantStack<T, Container> &copy)
 {
     if (this != &copy)
-    {
-        _n = copy._n;
-        _vector = copy._vector;
-    }
+        std::stack<T>::operator=(copy);
     return (*this);
 }
+template <typename T, typename Container>
+MutantStack<T, Container>::~MutantStack(){}
 
-void    MutantStack::addNumber(unsigned int n)
+//iterator 
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::begin()
 {
-    if (_vector.size() >= _n)
-        throw std::length_error("Container is fullll\n");
-    else
-        _vector.push_back(n);
+    return this->c.begin();
+}
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::end()
+{
+    return this->c.end();
 }
 
-MutantStack::~MutantStack(){}
-
-int MutantStack::shortestMutantStack()
+//const iterator
+template <typename T, typename Container>
+typename Container::const_iterator MutantStack<T, Container>::begin() const
 {
-    if (_vector.size() < 2)
-        throw std::length_error ("Can't find, container is too short\n");
-    std::vector<int> tmp(_vector);
-    std::sort(tmp.begin(), tmp.end());
-    int possiblMin = tmp[1] - tmp[0];
-    for (unsigned int walker = 2; walker < tmp.size(); walker++)
-    {
-        if (possiblMin > tmp[walker] - tmp[walker - 1])
-            possiblMin =  (tmp[walker] - tmp[walker - 1]);
-    }
-    return (possiblMin);
+    return this->c.begin();
 }
-
-int MutantStack::longestMutantStack()
+template <typename T, typename Container>
+typename Container::const_iterator MutantStack<T, Container>::end() const
 {
-    if (_vector.size() < 2)
-        throw std::length_error ("Can't find, container is too short\n");
-    std::vector<int> tmp(_vector);
-    std::sort(tmp.begin(), tmp.end());
-    unsigned int max =  (tmp[tmp.size() -1]  - tmp[0]);
-    return (max);
+    return this->c.end();
 }
+//reverse iterator
 
-void MutantStack::print()
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rbegin()
 {
-    for (std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); it++)
-        std::cout << *it << " ";
-    std::cout << std::endl;
+    return this->c.rbegin();
+}
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rend()
+{
+    return this->c.rend();
+}
+//reverse const iterator
+
+template <typename T, typename Container>
+typename Container::const_reverse_iterator MutantStack<T, Container>::rbegin() const
+{
+    return this->c.rbegin();
+}
+template <typename T, typename Container>
+typename Container::const_reverse_iterator MutantStack<T, Container>::rend() const
+{
+    return this->c.rend();
 }
