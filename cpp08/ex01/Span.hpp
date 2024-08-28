@@ -26,6 +26,7 @@ class Span
         void    addNumber(unsigned int n);
         int     shortestSpan();
         int     longestSpan();
+        void    print();
 };
 
 #endif

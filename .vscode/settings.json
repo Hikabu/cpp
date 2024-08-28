@@ -70,7 +70,11 @@
         "execution": "cpp",
         "unordered_set": "cpp",
         "variant": "cpp",
-        "*.tpp": "cpp"
+        "*.tpp": "cpp",
+        "__tree": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

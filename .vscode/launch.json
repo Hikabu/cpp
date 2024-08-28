@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp07/ex02/array",
+            "program": "${workspaceFolder}/cpp08/ex01/Span",
             "args": ["DEBUG"],
             "cwd": "${workspaceFolder}"
         }
