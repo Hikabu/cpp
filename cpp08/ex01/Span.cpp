@@ -18,7 +18,7 @@ Span &Span::operator=(const Span &copy)
 
 void    Span::addNumber(unsigned int n)
 {
-    if (_vector.size() >= n)
+    if (_vector.size() >= _n)
         throw std::length_error("Container is fullll\n");
     else
         _vector.push_back(n);
@@ -53,8 +53,7 @@ int Span::longestSpan()
 
 void Span::print()
 {
-    for (std::vector<int>::iterator it = _vector.begin();
-        it != _vector.end(); it++)
+    for (std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); it++)
         std::cout << *it << " ";
-        std::cout << std::endl;
+    std::cout << std::endl;
 }

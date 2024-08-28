@@ -6,8 +6,6 @@
 # include <algorithm>
 # include <vector>
 # include <iterator> //reduce the complexity and execition time
-# include <list>
-# include <forward_list>
 # include <deque>
 
 class MutantStack
