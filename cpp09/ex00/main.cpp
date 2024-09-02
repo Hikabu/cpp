@@ -2,6 +2,7 @@
 
 int main(int ac, char **av)
 {
+    Bitcoin bit;
     std::map < std::string, std::string > map;
     if (ac != 2)
     {
@@ -10,7 +11,7 @@ int main(int ac, char **av)
     }
     try
     {
-        start (av[1]);
+        bit.start (av[1]);
     }
     catch(std::exception &e)
     {

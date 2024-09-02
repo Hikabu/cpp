@@ -9,6 +9,16 @@
 # include <iostream>
 # include <map>
 
-static void start(char *av);
+class Bitcoin
+{
+    private:
+        static void start(std::string av);
+    public:
+        Bitcoin() {};
+        ~Bitcoin() {};
+}
+
+
+// # include "BitcoinExchange.cpp"
 
 #endif
