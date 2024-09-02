@@ -1,4 +1,4 @@
-NAME		= array
+NAME		= btc
 	
 CC			= c++
 # FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
@@ -7,11 +7,11 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main
+FILES		= main BitcoinExchange
 
 SRC			= $(FILES:=.cpp) Array.tpp
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= Array.hpp 
+HEADER		= BitcoinExchange.hpp 
 
 all: $(NAME)
 

@@ -25,7 +25,7 @@ class MutantStack : public std::stack<T>
     iterator begin( void );
     iterator end ( void );
 
-    //const iterator 
+    //const iterator read-only
     typedef typename Container::const_iterator const_iterator;
     const_iterator begin( void ) const ;
     const_iterator end ( void ) const ;
