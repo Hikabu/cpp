@@ -19,7 +19,7 @@ bool RPN::checkInput(const std::string &input)
             continue;
         if (smbl.length() > 1)
             return false;
-        if (smbl[0] <= '0' && smbl[0] >= '9')
+        if (smbl[0] <= '0' && smbl[0] > '9')
             return (false);
     }
     return (true);
@@ -45,11 +45,11 @@ void RPN::start (const std::string &input)
             tmpNbr = stack.top(); stack.pop();
             std::cout << "Opertor: " << smbl << std::endl;
             if (smbl == "+"){
-                psblRes = stack.top() + psblRes; stack.pop();}
+                psblRes = stack.top() + tmpNbr; stack.pop();}
             else if (smbl == "-"){
-                psblRes = stack.top() - psblRes; stack.pop();}
+                psblRes = stack.top() - tmpNbr; stack.pop();}
             else if (smbl == "*"){
-                psblRes = stack.top() * psblRes; stack.pop();}
+                psblRes = stack.top() * tmpNbr; stack.pop();}
             else if (smbl == "/")
             {
                 if (tmpNbr == 0)
@@ -57,14 +57,14 @@ void RPN::start (const std::string &input)
                     std::cerr << "Wrong division" << std::endl;
                     return ;
                 }
-                psblRes = stack.top() / psblRes; stack.pop();
+                psblRes = stack.top() / tmpNbr; stack.pop();
             }
             stack.push(psblRes);
             std::cout << "what can be " << psblRes << std::endl;
         }
-        else if (input >= "0" && input <= "9")
+        else if (smbl >= "0" && smbl <= "9")
         {
-            std::istringstream iss(input);
+            std::istringstream iss(smbl);
             if (iss >> value){
                 std::cout << "Int: " << value << std::endl;
                 stack.push(value);
