@@ -43,7 +43,7 @@ void RPN::start (const std::string &input)
         if (smbl == "+" || smbl == "-" || smbl == "*" || smbl == "/" )
         {
             tmpNbr = stack.top(); stack.pop();
-            std::cout << "Opertor: " << smbl << std::endl;
+            // std::cout << "Opertor: " << smbl << std::endl;
             if (smbl == "+"){
                 psblRes = stack.top() + tmpNbr; stack.pop();}
             else if (smbl == "-"){
@@ -60,13 +60,13 @@ void RPN::start (const std::string &input)
                 psblRes = stack.top() / tmpNbr; stack.pop();
             }
             stack.push(psblRes);
-            std::cout << "what can be " << psblRes << std::endl;
+            // std::cout << "what can be " << psblRes << std::endl;
         }
         else if (smbl >= "0" && smbl <= "9")
         {
             std::istringstream iss(smbl);
             if (iss >> value){
-                std::cout << "Int: " << value << std::endl;
+                // std::cout << "Int: " << value << std::endl;
                 stack.push(value);
             }
         }

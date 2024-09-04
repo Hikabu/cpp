@@ -32,7 +32,7 @@ of the float type without losing decimal digits.*/
 
 
 
-//  #include <iostream> // Example 2.1.
+//  #include <iostream> 
 // int main()
 // {
 //     float a = 3.1;

@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp08/ex01/Span",
-            "args": ["DEBUG"],
+            "program": "${workspaceFolder}/cpp09/ex01/Polish",
+            "args": ["8 9 *"],
             "cwd": "${workspaceFolder}"
         }
     ]
