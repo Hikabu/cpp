@@ -9,6 +9,7 @@
 # include <ctime>
 # include <cstring>
 # include <sstream>
+# define MAX 2147483647
 
 template <typename Container>
 void push(size_t value, Container&arr)
@@ -28,9 +29,10 @@ template <typename Container>
 Container sortMergeVector(Container &vec1, Container &vec2);
 
 template <typename Container>
-
 Container firstSortMergeVec(Container &arr);
 
+template <typename Container>
+void faster(Container &arr);
 #include "PmergeMe.tpp"
 
 #endif

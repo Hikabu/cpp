@@ -2,6 +2,22 @@
 
 template <typename Container>
 
+void faster(Container &arr)
+{   
+    for (size_t i = 1; i < arr.size(); i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+        while ( j >= 0 && arr[j] > key){
+            arr[j  + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+template <typename Container>
+
 // void  firstSortMergeVec(std::vector<int> &arr)
 Container firstSortMergeVec(Container &arr)
 {
@@ -19,10 +35,14 @@ Container firstSortMergeVec(Container &arr)
     return (arr);
 }
 template <typename Container>
-Container sortMergeVector(const Container &vec1, const Container &vec2)
+Container sortMergeVector(Container &vec1, Container &vec2)
 {
-    // std::vector<int> result;
-    // std::vector<int>::size_type i = 0, j = 0;
+
+    // if (vec1.size() <= 20 && vec2.size() <= 20)
+    // {
+    //     faster(vec1);
+    //     faster(vec2);
+    // }
 
     Container result;
     typename Container::size_type i = 0, j = 0;
