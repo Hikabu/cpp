@@ -1,13 +1,13 @@
 NAME		= PmergeMe
 	
 CC			= c++
-# FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
-FLAGS		=  -Wall -Wextra -Werror -Wc++98-compat-pedantic -g3
+FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
+# FLAGS		=  -Wall -Wextra -Werror -Wc++98-compat-pedantic -g3
 RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main PmergeMe
+FILES		= main 
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))

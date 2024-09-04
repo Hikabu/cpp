@@ -1,8 +1,8 @@
 #include "BitcoinExchange.hpp"
 
-Bitcoin::Bitcoin (const Bitcoin &) {} ;
+Bitcoin::Bitcoin (const Bitcoin &) {} 
 
-Bitcoin& Bitcoin::operator=(const Bitcoin &) { return *this; };
+Bitcoin& Bitcoin::operator=(const Bitcoin &) { return *this; }
 
 int Bitcoin::readAll(const std::string &av)
 {

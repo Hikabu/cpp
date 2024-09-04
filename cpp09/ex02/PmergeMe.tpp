@@ -1,28 +1,31 @@
 #include "PmergeMe.hpp"
 
-// PmergeMe::PmergeMe(const PmergeMe &) {};
-// PmergeMe &PmergeMe::operator=(const PmergeMe &) {
-//     return *this;
-// };
+template <typename Container>
 
-std::vector<int> firstSortMergeVec(std::vector <int> &arr)
+// void  firstSortMergeVec(std::vector<int> &arr)
+Container firstSortMergeVec(Container &arr)
 {
     if (arr.size() <= 1)
-        return ;
+        return arr;
     //deviding into two halves
     int mid = arr.size() / 2;
-    std::vector<int> left(arr.begin(), arr.begin() + mid);
-    std::vector<int> right(arr.begin() + mid, arr.end());
+    Container left(arr.begin(), arr.begin() + mid);
+    Container right(arr.begin() + mid, arr.end());
 
     //recurs sort two halves
     firstSortMergeVec(left);
     firstSortMergeVec(right);
-    return sortMergeVector(left, right);
+    arr = sortMergeVector(left, right);
+    return (arr);
 }
-std::vector<int> sortMergeVector(std::vector<int> vec1, std::vector<int> vec2)
+template <typename Container>
+Container sortMergeVector(const Container &vec1, const Container &vec2)
 {
-    std::vector<int> result;
-    std::vector<int>::size_type i = 0, j = 0;
+    // std::vector<int> result;
+    // std::vector<int>::size_type i = 0, j = 0;
+
+    Container result;
+    typename Container::size_type i = 0, j = 0;
 
     while (i < vec1.size() && j < vec2.size())
     {
@@ -39,7 +42,7 @@ std::vector<int> sortMergeVector(std::vector<int> vec1, std::vector<int> vec2)
         result.push_back(vec1[i]);
         i++;
     }
-    while (i < vec2.size())
+    while (j < vec2.size())
     {
         result.push_back(vec2[j]);
         j++;

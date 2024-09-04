@@ -1,8 +1,8 @@
 #include "RPN.hpp"
 
-RPN::RPN(const RPN &) {};
+RPN::RPN(const RPN &) {}
 
-RPN& RPN::operator=(const RPN &) { return *this;};
+RPN& RPN::operator=(const RPN &) { return *this;}
 
 bool RPN::checkInput(const std::string &input)
 {
@@ -76,7 +76,7 @@ void RPN::start (const std::string &input)
         }
     }
         if (stack.size() == 1)
-            std::cout << "result " << stack.top() << std::endl;
+            std::cout << "Result " << stack.top() << std::endl;
         else
             std::cerr << "wrong input" << std::endl;
 }

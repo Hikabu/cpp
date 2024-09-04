@@ -3,21 +3,32 @@
 
 # include <vector>
 # include <list>
+# include <deque>
 # include <iostream>
 # include <ctime>
+# include <cstring>
+# include <sstream>
 
-// class PmergeMe
-// {
-//     private:
-//         PmergeMe() {};
-//         ~PmergeMe() {};
-//     public:
-//         PmergeMe(const PmergeMe &);
-//         PmergeMe &operator=(const PmergeMe &);
+template <typename Container>
+void push(size_t value, Container&arr)
+{
+        arr.push_back(value);
+}
 
-// };
-        static std::vector<int> sortMergeVector(std::vector<int> vec1, std::vector<int> vec2);
-        static std::vector<int> firstSortMergeVec(std::vector <int> &arr);
+template <typename Container>
+void print(Container&arr)
+{
+        for (unsigned int i = 0; i < arr.size(); i++)
+                std::cout << arr[i] << ' ';
+        std::cout << std::endl;
+}
 
+template <typename Container>
+Container sortMergeVector(Container &vec1, Container &vec2);
 
+template <typename Container>
+
+Container firstSortMergeVec(Container &arr);
+
+#include "PmergeMe.tpp"
 #endif
