@@ -1,5 +1,6 @@
-#ifndef PMERGE_ME
-# define PMERGE_ME
+#pragma once
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
 
 # include <vector>
 # include <list>
@@ -31,4 +32,5 @@ template <typename Container>
 Container firstSortMergeVec(Container &arr);
 
 #include "PmergeMe.tpp"
+
 #endif

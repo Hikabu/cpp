@@ -1,5 +1,6 @@
-# include "PmergeMe.hpp"
 
+# include "PmergeMe.hpp"
+// # include "PmergeMe.tpp"
 int main(int ac, char **av)
 {
     if (ac < 2 )
@@ -19,7 +20,9 @@ int main(int ac, char **av)
         } 
         try {
                 std::istringstream iss(av[i]);
-                push(std::stoi(av[i]), victor);
+                int val = 0;
+                iss >> val;
+                push(val, victor);
             }
         catch (std::exception &e){
                 std::cerr << "Error " << e.what() << std::endl; 
