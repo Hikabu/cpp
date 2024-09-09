@@ -7,11 +7,11 @@ RM			= rm -rf
 
 OBJDIR = obj
 
-FILES		= main 
+FILES		= main PmergeMe  PmergeMeDeq
 
 SRC			= $(FILES:=.cpp)
 OBJ     	= $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
-HEADER		= PmergeMe.hpp 
+HEADER		= PmergeMe.hpp  PmergeMeDeq.hpp
 
 all: $(NAME)
 

@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/cpp09/ex01/Polish",
-            "args": ["8 9 *"],
+            "program": "${workspaceFolder}/cpp09/ex02/PmergeMe",
+            "args": ["2", "3", "4", "5"],
             "cwd": "${workspaceFolder}"
         }
     ]

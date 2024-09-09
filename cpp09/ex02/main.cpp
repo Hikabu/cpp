@@ -1,12 +1,14 @@
 
 # include "PmergeMe.hpp"
-// # include "PmergeMe.tpp"
+# include "PmergeMeDeq.hpp"
+
 int main(int ac, char **av)
 {
     if (ac < 2 )
         std::cerr << "Not enough arguments" << std::endl;
     
     std::vector<int> victor;
+    std::set<int> uniq;
     std::deque<int> deq;
 
     for (int i = 1; i < ac; i++)
@@ -23,9 +25,19 @@ int main(int ac, char **av)
             }
         } 
         try {
-
                 push(val, victor);
                 push(val, deq);
+				std::vector<int>::iterator it = victor.begin();
+				while(it != victor.end())
+				{
+					uniq.insert(*it);
+					it++;
+				}
+				if (uniq.size() != victor.size())
+				{
+					std::cerr << "There is a duplicate\n" ;
+					exit(1);
+				}
             }
         catch (std::exception &e){
                 std::cerr << "Error " << e.what() << std::endl; 
@@ -36,7 +48,7 @@ int main(int ac, char **av)
     std::cout << "Before ";
     print (victor);
     clock_t start = clock();
-    firstSortMergeVec(victor);
+    PmergeMe::sort(victor);
     clock_t end = clock();
     std::cout << "After ";
     print(victor);
@@ -46,7 +58,7 @@ int main(int ac, char **av)
     std::cout << "Before ";
     print (deq);
     start = clock();
-    firstSortMergeVec(deq);
+    PmergeMeDeq::sortdeq(deq);
     end = clock();
     std::cout << "After ";
     print(deq);
