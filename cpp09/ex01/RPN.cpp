@@ -43,7 +43,10 @@ void RPN::start (const std::string &input)
         if (smbl == "+" || smbl == "-" || smbl == "*" || smbl == "/" )
         {
             tmpNbr = stack.top(); stack.pop();
-            // std::cout << "Opertor: " << smbl << std::endl;
+            if ((stack.size() < 1)){
+                std::cerr << "Error with the operator, it is to early for putting it - stack is small" << std::endl;
+                return ;
+            }
             if (smbl == "+"){
                 psblRes = stack.top() + tmpNbr; stack.pop();}
             else if (smbl == "-"){
