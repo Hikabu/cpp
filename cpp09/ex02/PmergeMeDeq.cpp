@@ -1,4 +1,5 @@
 #include "PmergeMeDeq.hpp"
+#include "PmergeMe.hpp"
 void PmergeMeDeq::fill_pairs(std::deque<int> &v, std::deque<std::pair<int, int> > &pairs)
 {
     std::deque<int>::iterator it = v.begin();
@@ -128,7 +129,7 @@ void PmergeMeDeq::binary_insert(std::deque<int> &sorted, int num, int groupIx)
 {
     std::deque<int> copy = sorted;
     size_t i = pow(2, groupIx) - 1;
-    if (i - sorted.size())
+    if (i < sorted.size())
         copy.erase(copy.begin() + i, copy.end());
     int left = 0;
     int right = copy.size();
@@ -139,6 +140,11 @@ void PmergeMeDeq::binary_insert(std::deque<int> &sorted, int num, int groupIx)
         if (sorted[mid] < num && mid + 1 < sorted.size() && sorted[mid + 1] > num)
         {
             sorted.insert(sorted.begin() + mid + 1, num);
+            return ;
+        }
+        else if (left == right)
+        {
+            sorted.insert(sorted.begin() + left, num);
             return ;
         }
         else if (sorted[mid] < num)
@@ -212,6 +218,6 @@ void PmergeMeDeq::sortdeq(std::deque<int> &v)
     devide_to_groups(pairs, groups);
     // print_groups(groups);
     insert_in_sorted(groups, sorted);
-	std::cout << std::endl;
-
+    std::cout << "After ";
+    print(sorted);
 }

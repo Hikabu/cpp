@@ -16,6 +16,10 @@ int main(int ac, char **av)
         std::istringstream iss(av[i]);
         long long val = 0;
         iss >> val;
+        if (ac == 2)
+        {
+            std::istringstream iss(av[1]);
+        }
         for (size_t j = 0; j < strlen(av[i]); j++)
         {
             if ( val > MAX || !isdigit(av[i][j]) )
@@ -35,6 +39,7 @@ int main(int ac, char **av)
 				}
 				if (uniq.size() != victor.size())
 				{
+                    
 					std::cerr << "There is a duplicate\n" ;
 					exit(1);
 				}
@@ -50,18 +55,14 @@ int main(int ac, char **av)
     clock_t start = clock();
     PmergeMe::sort(victor);
     clock_t end = clock();
-    std::cout << "After ";
-    print(victor);
     double duration = static_cast<double>(end - start) /  CLOCKS_PER_SEC;
-    std::cout << "Time to process a range of " << ac - 1  << " elements with std::vector : " << std::fixed << duration  << " us" << std::endl;
+    std::cout << "Time to process a range of " << ac - 1  << " elements with std::vector : " << std::fixed << duration  << " us\n" << std::endl;
 
     std::cout << "Before ";
     print (deq);
     start = clock();
     PmergeMeDeq::sortdeq(deq);
     end = clock();
-    std::cout << "After ";
-    print(deq);
     duration = static_cast<double>(end - start) /  CLOCKS_PER_SEC;
     std::cout << "Time to process a range of " << ac - 1  << " elements with std::vector : " << std::fixed << duration << " us" << std::endl;
 

@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Debug",
             "program": "${workspaceFolder}/cpp09/ex02/PmergeMe",
-            "args": ["2", "3", "4", "5"],
+            "args": ["shuf -i 1-1000 -n 3000 | tr \"\\n\" \" \""],
             "cwd": "${workspaceFolder}"
         }
     ]

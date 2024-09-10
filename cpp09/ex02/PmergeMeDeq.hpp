@@ -1,4 +1,4 @@
-#pragma once
+// #pragma once
 #ifndef PMERGEMEDEQ_HPP
 # define PMERGEMEDEQ_HPP
 
@@ -10,6 +10,7 @@
 # include <cstring>
 # include <sstream>
 # include <set>
+# include "PmergeMeDeq.hpp"
 # define MAX 2147483647
 
 
