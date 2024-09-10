@@ -5,7 +5,10 @@
 int main(int ac, char **av)
 {
     if (ac < 2 )
+    {
         std::cerr << "Not enough arguments" << std::endl;
+        return (1);
+    }
     
     std::vector<int> victor;
     std::set<int> uniq;

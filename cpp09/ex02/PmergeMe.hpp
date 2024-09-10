@@ -10,7 +10,10 @@
 # include <cstring>
 # include <sstream>
 # include <set>
+# include <cstdlib> 
+# include <math.h>
 # define MAX 2147483647
+
 
 
 template <typename Container>
@@ -21,7 +24,7 @@ void push(size_t value, Container&arr)
 template <typename Container>
 void print(Container&arr)
 {
-        for (unsigned int i = 0; i < arr.size(); i++)
+        for (size_t i = 0; i < arr.size(); i++)
                 std::cout << arr[i] << ' ';
         std::cout << std::endl;
 }
